@@ -1,0 +1,65 @@
+/* --- PALETA CLÁSICA / TORNEO --- */
+:root {
+    --hunter-green: #386641ff;
+    --sage-green: #6a994eff;
+    --yellow-green: #a7c957ff;
+    --vanilla-cream: #f2e8cfff;
+    --blushed-brick: #bc4749ff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    /* Fondo verde oscuro para darle un aspecto muy elegante a la página */
+    background-color: var(--hunter-green); 
+    padding-top: 50px;
+    color: var(--vanilla-cream);
+}
+
+h2 {
+    color: var(--vanilla-cream);
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+#tablero {
+    display: grid;
+    grid-template-columns: repeat(8, 50px);
+    grid-template-rows: repeat(8, 50px);
+    width: 400px;
+    margin: 0 auto;
+    /* Usamos el color ladrillo para simular un borde de madera rojiza */
+    border: 10px solid var(--blushed-brick);
+    border-radius: 4px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.casilla {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    transition: background-color 0.2s ease;
+}
+
+/* --- APLICACIÓN DE LA PALETA A LAS CASILLAS --- */
+
+/* Casillas claras: Vanilla Cream */
+.blanca { 
+    background-color: var(--vanilla-cream); 
+    color: var(--hunter-green); /* Piezas oscuras */
+}
+
+/* Casillas oscuras: Sage Green */
+.negra { 
+    background-color: var(--sage-green); 
+    color: var(--vanilla-cream); /* Piezas claras */
+}
+
+/* Efecto hover interactivo */
+.casilla:hover {
+    /* Al pasar el ratón, la casilla se ilumina con el verde amarillento */
+    background-color: var(--yellow-green);
+    color: var(--hunter-green);
+    cursor: pointer;
+}

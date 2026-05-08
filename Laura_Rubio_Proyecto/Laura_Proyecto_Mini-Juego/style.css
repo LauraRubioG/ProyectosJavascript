@@ -1,0 +1,90 @@
+:root {
+    --alabaster-grey: #d8e2dc;
+    --powder-petal: #ffe5d9;
+    --pastel-pink: #ffcad4;
+    --cherry-blossom: #f4acb7;
+    --dusty-mauve: #9d8189;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    background-color: var(--alabaster-grey);
+    color: var(--dusty-mauve);
+    padding-top: 50px;
+}
+
+#personajes {
+    width: 600px;
+    height: 200px;
+    border: 4px solid var(--powder-petal);
+    border-radius: 10px;
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden; 
+    background-image: url('images/campo.png'); 
+    background-size: cover; /* Hace que la imagen cubra todo el cuadro sin deformarse */
+    background-position: center bottom; /* Centra la imagen y la alinea hacia abajo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita como un mosaico */
+    
+    border-bottom: 8px solid var(--dusty-mauve);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+#abeja, #flor {
+    width: 40px;
+    height: 40px;
+    font-size: 40px;
+    position: absolute;
+    bottom: 0;
+}
+
+#abeja { left: 50px; z-index: 2; }
+#flor { right: 0; animation: moverObstaculo 2s infinite linear; }
+
+/* Estilos para el mensaje de derrota */
+#contenedor-mensaje {
+    display: none; /* Oculto por defecto */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    border: 3px solid var(--cherry-blossom);
+    z-index: 10;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+#mensaje-juegoperdido {
+    margin-top: 0;
+    color: var(--dusty-mauve);
+}
+
+#btn-reiniciar {
+    background-color: var(--cherry-blossom);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#btn-reiniciar:hover {
+    background-color: var(--dusty-mauve);
+}
+
+.salto { animation: saltarPersonaje 0.5s ease-in-out; }
+
+@keyframes moverObstaculo {
+    0% { right: -50px; }
+    100% { right: 600px; }
+}
+
+@keyframes saltarPersonaje {
+    0%, 100% { bottom: 0; }
+    40%, 60% { bottom: 120px; }
+}
