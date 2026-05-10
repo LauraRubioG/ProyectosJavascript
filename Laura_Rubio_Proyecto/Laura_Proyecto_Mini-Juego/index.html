@@ -1,27 +1,45 @@
 <!DOCTYPE html>
+<!-- Aqui indicamos el idioma principal de la pagina -->
 <html lang="es">
 <head>
+    <!-- Para que se interprete los acentos y la ñ -->
     <meta charset="UTF-8">
+    <!-- Para adaptarlo a las patallas moviles -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Titulo para la pestaña del navegador -->
     <title>Laura_Rubio_ProyectoMiniJuego</title>
+    <!-- Aqui conectamos el archivo html con nuestra hija de CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
+<!-- A partir de lo que haya dentro del body ya se verá por pantalla -->
 <body>
+    <!-- Titulo de nuestra página -->
     <h1>Mini Juego: Abeja y Flor</h1>
+    <!-- Hacemos un contenerdor principal para agruparlo todo y asi
+     poder menimuparlo todo en el CSS -->
     <div id="juego">
+        <!-- Es nuestro marcador inicial, el cual empieza por 0. Span con
+         el id de puntuacion lo ponemos para que luego en JavaScript lo encuentr
+         y pueda ir modificando el el 0 -->
         <p>Puntuación: <span id="puntuacion">0</span></p>
-        
+        <!-- contenedor de nuetsro mensaje de error -->
         <div id="contenedor-mensaje">
+            <!-- Mensaje en forma de texto que aparecerá cuando se pierda -->
             <h2 id="mensaje-juegoperdido">¡Has Perdido!</h2>
+            <!-- boton que aparecerá igualc cuando se pierda y se podrá reinicar
+             este boton se programará en el archivo JavaScript -->
             <button id="btn-reiniciar">Aceptar / Reiniciar</button>
         </div>
-
+        <!-- Contenedor para crear a los personajes -->
         <div id="personajes">
+            <!-- personaje de la abeja -->
             <div id="abeja">🐝</div>
+            <!-- personaje de la flot -->
             <div id="flor">🌻</div>
         </div>
     </div>
-
+    <!-- y aqui conectamos con nuestro archivo JavaScript que hará que el juego
+     funcione -->
     <script src="script.js"></script>
 </body>
 </html>
