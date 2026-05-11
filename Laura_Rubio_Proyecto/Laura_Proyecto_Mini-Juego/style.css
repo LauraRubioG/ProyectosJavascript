@@ -1,3 +1,5 @@
+/* Variables de color, aqui definimos los colores que queremos poner
+en toda la hoja de eslito */
 :root {
     --alabaster-grey: #d8e2dc;
     --powder-petal: #ffe5d9;
@@ -6,6 +8,8 @@
     --dusty-mauve: #9d8189;
 }
 
+/* Estilos generales
+tipología, centrar texto, aplicar fondo gris, color texto, bajamos contenido */
 body {
     font-family: 'Segoe UI', sans-serif;
     text-align: center;
@@ -14,23 +18,34 @@ body {
     padding-top: 50px;
 }
 
+/* El escenario del juego
+ancho pantalla, altura, borde sueve, suavizar esquinas, separador de arriba
+abajo y centro */
 #personajes {
     width: 600px;
     height: 200px;
     border: 4px solid var(--powder-petal);
     border-radius: 10px;
     margin: 20px auto;
+    /* Permite que la abajea y la flor se posicionen dentro de este recuadro, no fuera */
     position: relative;
+    /* Hace invisibles a los elemntos cuando salen de este recuadro */
     overflow: hidden; 
+
+    /* configura imagen, imagen cobra recuadro, centra la imagen, hace que no se repita */
     background-image: url('images/campo.png'); 
-    background-size: cover; /* Hace que la imagen cubra todo el cuadro sin deformarse */
-    background-position: center bottom; /* Centra la imagen y la alinea hacia abajo */
-    background-repeat: no-repeat; /* Evita que la imagen se repita como un mosaico */
-    
+    background-size: cover; 
+    background-position: center bottom;
+    background-repeat: no-repeat;
+
+    /* Detalle esteticos de la base
+    simula visualmente el suelo donde estan los personajes, añade sombra el recuadro */
     border-bottom: 8px solid var(--dusty-mauve);
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
+/* Estilcos para abeja y flor
+tamaño caja, altura caja, tamaño emoje, permite moverse coordenadas, los pega al suelo */
 #abeja, #flor {
     width: 40px;
     height: 40px;
@@ -39,10 +54,22 @@ body {
     bottom: 0;
 }
 
-#abeja { left: 50px; z-index: 2; }
-#flor { right: 0; animation: moverObstaculo 2s infinite linear; }
+/* Estilo para abeja
+siempre fija en borde izquierdo, asegura que pase por delante de la flor */
+#abeja { 
+    left: 50px; 
+    z-index: 2; 
+}
+/* Estilo para flor
+inicial borde derecho, asigna animacion de movimiento infinito de forma
+predeterminada */
+#flor { 
+    right: 0; 
+    animation: moverObstaculo 2s infinite linear; 
+}
 
-/* Estilos para el mensaje de derrota */
+/* Menu flotante de game over
+oculto por defecto, flora sobre los demas, lo mueve al 50% arriba e izquierda */
 #contenedor-mensaje {
     display: none; /* Oculto por defecto */
     position: absolute;
@@ -57,11 +84,15 @@ body {
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
+/* Texro has perdido
+quita el magen que traen por defecto, color oscuro */
 #mensaje-juegoperdido {
     margin-top: 0;
     color: var(--dusty-mauve);
 }
 
+/* Boton aceptar/reiniciar
+color, texto, relieve de fondo, mas grande, curvatura leve, tamaño */
 #btn-reiniciar {
     background-color: var(--cherry-blossom);
     color: white;
@@ -69,21 +100,29 @@ body {
     padding: 10px 20px;
     border-radius: 5px;
     font-size: 16px;
+    /* cambia el raton por una manita apuntando */
     cursor: pointer;
+    /* animacion suave al pasar el raton (dura 0.3s) */
     transition: background 0.3s;
 }
-
+/* Efecto al poner el raton encima del boton */
 #btn-reiniciar:hover {
     background-color: var(--dusty-mauve);
 }
 
-.salto { animation: saltarPersonaje 0.5s ease-in-out; }
-
+/* Clase para el salto */
+.salto { 
+    /* Ejecuta la animacion de salto. Dura 0.5 segundos
+    y tiene aceleracion/desaceleracion sueva */
+    animation: saltarPersonaje 0.5s ease-in-out; 
+}
+/* ANimacines calve, definen los fotogramas del movimiento paso a paso */
+/* define como se mueve la flor de derecha a izquierda */
 @keyframes moverObstaculo {
     0% { right: -50px; }
     100% { right: 600px; }
 }
-
+/* define la curva del salto de la abeja */
 @keyframes saltarPersonaje {
     0%, 100% { bottom: 0; }
     40%, 60% { bottom: 120px; }

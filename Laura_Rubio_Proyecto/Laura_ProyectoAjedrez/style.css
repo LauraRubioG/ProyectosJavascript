@@ -1,4 +1,4 @@
-/* --- PALETA CLÁSICA / TORNEO --- */
+/* creamos las variables de los colores */
 :root {
     --hunter-green: #386641ff;
     --sage-green: #6a994eff;
@@ -6,59 +6,65 @@
     --vanilla-cream: #f2e8cfff;
     --blushed-brick: #bc4749ff;
 }
-
+/* estilo generales */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
-    /* Fondo verde oscuro para darle un aspecto muy elegante a la página */
+    /* Fondo verde oscuro para darle un aspecto elegante a la página */
     background-color: var(--hunter-green); 
     padding-top: 50px;
     color: var(--vanilla-cream);
 }
-
+/* titulo principal */
 h2 {
     color: var(--vanilla-cream);
     margin-bottom: 30px;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
-
+/* Tablero
+modo cuadricula */
 #tablero {
     display: grid;
+    /* le decimos que cree 8 columnas com 50 de ancho */
     grid-template-columns: repeat(8, 50px);
+    /* Ahora que cree 8 filas de 50 de alto */
     grid-template-rows: repeat(8, 50px);
+    /* ancho, centra */
     width: 400px;
     margin: 0 auto;
-    /* Usamos el color ladrillo para simular un borde de madera rojiza */
+    /* color, suaviza los bordes, sombra debajo */
     border: 10px solid var(--blushed-brick);
     border-radius: 4px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
 
+/* casillas, Flexbox dentro de cada casilla, centra pieza ajedrez 
+horizontal y verticañ, tamaño de la pieza */
 .casilla {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 32px;
+    /* hace que el cambie de color cuando pasamos el raron */
     transition: background-color 0.2s ease;
 }
 
-/* --- APLICACIÓN DE LA PALETA A LAS CASILLAS --- */
 
-/* Casillas claras: Vanilla Cream */
+/* Casillas claras */
 .blanca { 
     background-color: var(--vanilla-cream); 
     color: var(--hunter-green); /* Piezas oscuras */
 }
 
-/* Casillas oscuras: Sage Green */
+/* Casillas oscuras */
 .negra { 
     background-color: var(--sage-green); 
     color: var(--vanilla-cream); /* Piezas claras */
 }
 
-/* Efecto hover interactivo */
+/* Efecto interactivo
+al pasar el raton se ilumina el verde, cambia la el cursor */
 .casilla:hover {
-    /* Al pasar el ratón, la casilla se ilumina con el verde amarillento */
     background-color: var(--yellow-green);
     color: var(--hunter-green);
     cursor: pointer;

@@ -1,0 +1,13 @@
+1. ¿Qué parte te ha resultado más difícil de implementar?
+Sin duda las acciones del mini-juego, entender realemte que es
+lo que está haciendp y poque el uso de esas funciones
+
+2. ¿Has añadido alguna funcionalidad extra (Bonus)?
+En el ajedrez añadí que se cambiaran los colores con CSS cuando
+pase el rato por encima. Y el tablero lo generé con JS
+Para el minijuego añadi que la puntuacion se sumase cuando saltase la flor
+no antes.
+
+3. ¿Funciona correctamente en todos los navegadores?
+Si, porque todo el codigo esta escrito en web modernos, por lo que funciona
+en cualquier navegador..
