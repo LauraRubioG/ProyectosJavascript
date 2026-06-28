@@ -36,7 +36,7 @@ for(let i = 0; i < 8; i++){
         if(i === 6) casilla.innerText = peonesBlancas[j];
         if(i === 7) casilla.innerText = piezasBlancas[j];
 
-        //Añadir la casilla al tablero HTML, volveos a crear la casilla en el div del html
+        //Añadir la casilla al tablero HTML, volveos a crear la casilla en el div del html, para mostrar en el navegador
         tablero.appendChild(casilla);
     }
 }
